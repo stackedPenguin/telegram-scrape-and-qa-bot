@@ -33,7 +33,7 @@ This project provides two Python scripts to interact with Telegram chats and per
     TELEGRAM_API_HASH=<your-telegram-api-hash>
     GEMINI_API_KEY=<your-gemini-api-key>
     ```
-    You can obtain the Telegram API credentials from [my.telegram.org](https://my.telegram.org) and the Gemini API key from [Google AI Studio](https://aistudio.google.com/app/apikey).
+    You can obtain the Telegram API credentials from [here](https://core.telegram.org/api/obtaining_api_id) and the Gemini API key from [Google AI Studio](https://aistudio.google.com/).
 
 ## Usage
 
