@@ -16,3 +16,5 @@ venv/
 
 # Qodo files
 .qodo/
+.vscode/settings.json
+X1_Validator_Army.md
