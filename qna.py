@@ -92,6 +92,27 @@ def main():
     file_paths = ["/Users/wei/projects/x1-validator/telegram/X1_Validator_Army.md", "/Users/wei/projects/x1-validator/telegram/x1_docs.md"]
     vector_store = get_or_create_vector_store(file_paths)
 
+    if len(sys.argv) > 1 and sys.argv[1].lower() == '--chat':
+        print("Starting chat session. Type 'exit' or 'quit' to end.")
+        while True:
+            try:
+                query = input("\nAsk a question: ")
+                if query.lower() in ['exit', 'quit']:
+                    break
+                if not query.strip():
+                    continue
+
+                print("Finding relevant passages...")
+                best_passages = find_best_passages(query, vector_store)
+
+                print("Generating answer...")
+                answer = generate_answer(query, best_passages)
+                print(f"\nAnswer:\n{answer}")
+            except (KeyboardInterrupt, EOFError):
+                print("\nExiting chat session.")
+                break
+        return
+
     if len(sys.argv) > 1:
         query = " ".join(sys.argv[1:])
     else:

@@ -59,6 +59,8 @@ First, you need to export the chat history of the Telegram group you want to ana
 
 Once you have the chat history file, you can use the `qna.py` script to ask questions about it.
 
+#### Single Question
+
 1.  **Run the `qna.py` script with a question:**
     ```bash
     python qna.py "Your question about the chat history"
@@ -72,3 +74,18 @@ Once you have the chat history file, you can use the `qna.py` script to ask ques
     The script will create a local vector store of the chat history file (if it doesn't exist already) and then use it to find the most relevant passages to answer your question. The answer will be printed to the console.
 
     The first time you run this script, it will take some time to create the vector store. Subsequent runs will be much faster as they will reuse the existing vector store.
+
+#### Chat Session
+
+You can also run the Q&A engine in an interactive chat session.
+
+1.  **Run the `qna.py` script with the `--chat` flag:**
+    ```bash
+    python qna.py --chat
+    ```
+
+2.  **Ask questions:**
+    The script will prompt you to ask a question. Type your question and press Enter.
+
+3.  **Exit the session:**
+    To end the chat session, type `exit` or `quit`.
